@@ -3,16 +3,22 @@ package org.game;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         Board board = new Board();
         Renderer renderer = new Renderer();
+        HighScoreManager highScoreManager = new HighScoreManager();
 
         while (true) {
             renderer.draw(board.getGrid(), board.getScore());
 
             if (board.isGameOver()) {
-                System.out.println("Game Over! Final Score: " + board.getScore());
+                System.out.println("  GAME OVER! SCORE: " + board.getScore());
+                System.out.print("Enter your name: ");
+                String name = scanner.next();
+
+                highScoreManager.save(name, board.getScore());
+                highScoreManager.show();
                 break;
             }
 
