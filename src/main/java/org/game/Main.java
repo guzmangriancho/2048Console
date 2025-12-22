@@ -25,6 +25,7 @@ public class Main {
             }
         }
         scanner.close();
+        System.exit(0);
     }
 
     public static void playGame(Scanner scanner, HighScoreManager highScoreManager) throws Exception {
