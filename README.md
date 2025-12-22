@@ -23,3 +23,20 @@ Simple java console replica of the classic 2048 game with a local leaderboard sy
 1. **Start Game**: Create a new board and begin playing.
 2. **High Scores**: View the Top 10 scores saved in the local system.
 3. **Exit**: Close the game.
+
+
+## Runtime Example
+```
+            2048
+SCORE: 192
++------+------+------+------+
+|   4  |      |      |      |
++------+------+------+------+
+|   8  |   2  |      |      |
++------+------+------+------+
+|   2  |   8  |      |      |
++------+------+------+------+
+|  32  |  16  |   2  |   2  |
++------+------+------+------+
+> A
+````
