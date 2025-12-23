@@ -27,9 +27,9 @@ Simple java console replica of the classic 2048 game with a local leaderboard sy
 
 ## Runtime Example
 ```
-	┏━┓┏━┓╻ ╻┏━┓
-	┏━┛┃┃┃┗━┫┣━┫
-	┗━╸┗━┛  ╹┗━┛
+		┏━┓┏━┓╻ ╻┏━┓
+		┏━┛┃┃┃┗━┫┣━┫
+		┗━╸┗━┛  ╹┗━┛
 SCORE: 192
 +------+------+------+------+
 |   4  |      |      |      |
