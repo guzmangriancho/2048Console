@@ -8,7 +8,11 @@ public class Main {
         HighScoreManager highScoreManager = new HighScoreManager();
 
         while (true) {
-            System.out.println("\n          2048");
+           // System.out.println("\n          2048");
+            System.out.println("""
+                    \n     ┏━┓┏━┓╻ ╻┏━┓
+                         ┏━┛┃┃┃┗━┫┣━┫
+                         ┗━╸┗━┛  ╹┗━┛""");
             System.out.println("------------------------");
             System.out.println("1.     Start Game");
             System.out.println("2.  Show High Scores");
@@ -50,13 +54,16 @@ public class Main {
             if (input.isEmpty()) continue;
             char move = input.charAt(0);
 
-            if (move == 'W') board.moveUp();
-            else if (move == 'S') board.moveDown();
-            else if (move == 'A') board.moveLeft();
-            else if (move == 'D') board.moveRight();
+            boolean moved = false;
+            if (move == 'W') moved = board.moveUp();
+            else if (move == 'S') moved = board.moveDown();
+            else if (move == 'A') moved = board.moveLeft();
+            else if (move == 'D') moved = board.moveRight();
             else continue;
 
-            board.addRandomNumber();
+            if(moved) {
+                board.addRandomNumber();
+            }
         }
     }
 }

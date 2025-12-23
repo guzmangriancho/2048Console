@@ -38,104 +38,128 @@ public class Board {
         }
     }
 
-    public void moveLeft() {
+    public boolean moveLeft() {
+        boolean moved = false;
         for (int i = 0; i < 4; i++) {
             for (int step = 0; step < 3; step++) {
-                left(i);
+                if(left(i)) moved = true;
             }
             for (int j = 0; j < 3; j++) {
                 if (grid[i][j] != 0 && grid[i][j] == grid[i][j + 1]) {
                     grid[i][j] *= 2;
                     score += grid[i][j];
                     grid[i][j + 1] = 0;
+                    moved = true;
                 }
             }
-            left(i);
+            if(left(i)) moved = true;
         }
+        return moved;
     }
 
-    private void left(int i) {
+    private boolean left(int i) {
+        boolean moved = false;
         for (int j = 0; j < 3; j++) {
             if (grid[i][j] == 0 && grid[i][j + 1] != 0) {
                 grid[i][j] = grid[i][j + 1];
                 grid[i][j + 1] = 0;
+                moved = true;
             }
         }
+        return moved;
     }
 
-    public void moveRight() {
+    public boolean moveRight() {
+        boolean moved = false;
         for (int i = 0; i < 4; i++) {
             for (int step = 0; step < 3; step++) {
-                right(i);
+                if(right(i)) moved = true;
             }
             for (int j = 3; j > 0; j--) {
                 if (grid[i][j] != 0 && grid[i][j] == grid[i][j - 1]) {
                     grid[i][j] *= 2;
                     score += grid[i][j];
                     grid[i][j - 1] = 0;
+                    moved = true;
                 }
             }
-            right(i);
+            if(right(i)) moved = true;
         }
+        return moved;
     }
 
-    private void right(int i) {
+    private boolean right(int i) {
+        boolean moved = false;
         for (int j = 3; j > 0; j--) {
             if (grid[i][j] == 0 && grid[i][j - 1] != 0) {
                 grid[i][j] = grid[i][j - 1];
                 grid[i][j - 1] = 0;
+                moved = true;
             }
         }
+        return moved;
     }
 
-    public void moveUp() {
+    public boolean moveUp() {
+        boolean moved = false;
         for (int j = 0; j < 4; j++) {
             for (int step = 0; step < 3; step++) {
-                up(j);
+                if(up(j)) moved = true;
             }
             for (int i = 0; i < 3; i++) {
                 if (grid[i][j] != 0 && grid[i][j] == grid[i + 1][j]) {
                     grid[i][j] *= 2;
                     score += grid[i][j];
                     grid[i + 1][j] = 0;
+                    moved = true;
                 }
             }
-            up(j);
+            if(up(j)) moved = true;
         }
+        return moved;
     }
 
-    private void up(int j) {
+    private boolean up(int j) {
+        boolean moved = false;
         for (int i = 0; i < 3; i++) {
             if (grid[i][j] == 0 && grid[i + 1][j] != 0) {
                 grid[i][j] = grid[i + 1][j];
                 grid[i + 1][j] = 0;
+                moved = true;
             }
         }
+        return moved;
     }
 
-    public void moveDown() {
+    public boolean moveDown() {
+        boolean moved = false;
         for (int j = 0; j < 4; j++) {
             for (int step = 0; step < 3; step++) {
-                down(j);
+                if(down(j)) moved = true;
             }
             for (int i = 3; i > 0; i--) {
                 if (grid[i][j] != 0 && grid[i][j] == grid[i - 1][j]) {
                     grid[i][j] *= 2;
                     score += grid[i][j];
                     grid[i - 1][j] = 0;
+                    moved = true;
                 }
             }
-            down(j);
+            if(down(j)) moved = true;
         }
+        return moved;
     }
 
-    private void down(int j) {
+    private boolean down(int j) {
+        boolean moved = false;
         for (int i = 3; i > 0; i--) {
             if (grid[i][j] == 0 && grid[i - 1][j] != 0) {
                 grid[i][j] = grid[i - 1][j];
                 grid[i - 1][j] = 0;
+                moved = true;
             }
         }
+        return moved;
     }
 
     public boolean isGameOver() {

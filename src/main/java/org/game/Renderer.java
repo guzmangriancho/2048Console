@@ -3,7 +3,10 @@ package org.game;
 public class Renderer {
     public void draw(int[][] grid, int score) {
 
-        System.out.println("\n\n\n            2048");
+        System.out.println("""
+                \n\t\t┏━┓┏━┓╻ ╻┏━┓
+                \t\t┏━┛┃┃┃┗━┫┣━┫
+                \t\t┗━╸┗━┛  ╹┗━┛""");
         System.out.println("SCORE: " + score);
         System.out.println("+------+------+------+------+");
 
